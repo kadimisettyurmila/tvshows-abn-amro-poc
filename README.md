@@ -1,7 +1,8 @@
 # MyTvShows
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.2.
-
+# Install node js
+https://nodejs.org/en/
 # Install dependencies
 npm install
 
