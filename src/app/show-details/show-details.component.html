@@ -1,0 +1,14 @@
+<div class="show-details">
+<div class="row">
+<div class="col-sm-3">
+<img [src] = "selectedShowDetails.image.medium">
+</div>
+<div class="col-sm-9">
+    <h4>{{selectedShowDetails.name}}</h4>    
+<p [innerHtml]="selectedShowDetails.summary"></p>
+<p>Rating: {{selectedShowDetails.rating.average}}</p>
+<p>Language: {{selectedShowDetails.language}}</p>
+</div>
+</div>
+</div>
+

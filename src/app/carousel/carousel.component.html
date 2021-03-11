@@ -1,0 +1,13 @@
+<div class="container-fluid">
+<ngb-carousel>
+    <ng-template ngbSlide *ngFor = "let show of showsToSlide" >        
+      <div class="picsum-img-wrapper" [routerLink]="['/showDetails', show.id]">
+        <img [src]="show.image.original" alt="Angular Carousel 1">
+      </div>
+      <div class="carousel-caption font-weight-bold font-italic">
+        <h3>{{show.name}}</h3>
+        <h4 class="text-danger">Rating:{{show.rating.average}}</h4>
+      </div>      
+    </ng-template>
+  </ngb-carousel>
+</div>

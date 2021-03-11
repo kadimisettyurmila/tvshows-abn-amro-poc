@@ -1,0 +1,33 @@
+ngb-carousel {
+    max-width: 90%;
+    margin: 50px auto;
+    width: inherit;
+    height: inherit;
+    img {
+        width: 100%;
+        height: 300px;
+        outline: none;
+    }
+    .carousel-inner {
+        overflow: visible;
+    }
+    
+    .carousel-item {
+        display: flex !important;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 1.2s ease-in-out, visibility 1.2s;
+        z-index: -1;
+          &.active{
+            opacity: 1;
+            visibility: visible;
+            z-index: 10;
+                }
+    }
+    
+    .carousel-control-next, .carousel-indicators, .carousel-control-prev {
+         z-index: 20;
+    }
+    
+}
+
