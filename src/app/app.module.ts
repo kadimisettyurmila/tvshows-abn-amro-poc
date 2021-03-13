@@ -12,6 +12,7 @@ import { ShowDetailsComponent } from './show-details/show-details.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselComponent } from './carousel/carousel.component';
 import { OrderModule } from 'ngx-order-pipe';
+import { ShowsComponent } from './shows/shows.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { OrderModule } from 'ngx-order-pipe';
     GenresComponent,
     DashboardComponent,
     ShowDetailsComponent,
-    CarouselComponent
+    CarouselComponent,
+    ShowsComponent
   ],
   imports: [
     BrowserModule,

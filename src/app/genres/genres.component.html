@@ -1,4 +1,4 @@
-<h4 class="genre-header font-italic">{{selectedGenre}} Movies</h4>
+<h4 class="genre-header font-italic">{{selectedGenre}} Shows</h4>
 <div class="row tileclass">
     <div class="col-sm-6 col-md-3" *ngFor="let show of showsByGenre | orderBy: 'rating.average': true">
          <div class="card" [routerLink]="['/showDetails', show.id]">

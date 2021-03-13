@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,  
-  apiUrl: 'http://api.tvmaze.com/shows'
+  apiUrl: 'http://api.tvmaze.com/shows',
+  searchShowsApi: 'http://api.tvmaze.com/search/shows'
 };
 
 /*

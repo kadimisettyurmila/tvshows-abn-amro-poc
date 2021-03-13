@@ -1,0 +1,11 @@
+$card-color: rgba(0,0,0,0.2);
+.card { 
+    transition: 0.3s;
+    width: 90%;
+    height: 95%;
+    cursor: pointer !important;
+    padding: 25px;
+    &:hover {      
+    box-shadow: 0 8px 16px 0 $card-color;
+    }    
+  }

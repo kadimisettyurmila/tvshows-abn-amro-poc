@@ -18,5 +18,5 @@ export class HeaderComponent implements OnInit {
       this.genreList = this.commonService.getGenreList(this.allShows);
       console.log('genre list:',this.genreList);
     });
-  }
+  }  
 }

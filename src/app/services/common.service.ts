@@ -14,6 +14,13 @@ export class CommonService {
   getShowsList():Observable<Array<TvShow>> {
    return this.http.get<Array<TvShow>>(`${environment.apiUrl}`);
   }
+  /* Fetch shows by search value
+   @params searchShowName : show name to search
+   @returns shows by search value
+  */
+  getShowSearch(searchShowName: string):Observable<Array<TvShow>> {
+    return this.http.get<Array<TvShow>>(`${environment.searchShowsApi}`+'?q='+searchShowName);
+  }
   /*
   Fetches movies by genre 
    @param allShows: list of all Tv shows

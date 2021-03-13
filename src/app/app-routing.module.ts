@@ -3,11 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import { GenresComponent } from './genres/genres.component';
 import { ShowDetailsComponent } from './show-details/show-details.component';
+import { ShowsComponent } from './shows/shows.component';
 
 const routes: Routes = [{ path: '', component: DashboardComponent },
-{ path: 'home', component: DashboardComponent },
 { path: 'genres/:genre', component: GenresComponent },
-{ path: 'showDetails/:showId', component: ShowDetailsComponent }
+{ path: 'showDetails/:showId', component: ShowDetailsComponent },
+{ path: 'shows/:searchShow', component: ShowsComponent }
 ];
 
 @NgModule({
