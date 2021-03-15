@@ -9,7 +9,7 @@ import { CommonService } from '../services/common.service';
   styleUrls: ['./shows.component.scss']
 })
 export class ShowsComponent implements OnInit {
-  searchedShows: Array<TvShow> = [];
+  searchedShows: Array<{show: TvShow}> = [];
 
   constructor(private activatedRoute: ActivatedRoute, private commonService: CommonService) { }
 
@@ -18,8 +18,12 @@ export class ShowsComponent implements OnInit {
       console.log('search show value', param.searchShow)
       this.commonService.getShowSearch(param.searchShow).subscribe (shows => { 
         this.searchedShows = [];
-        console.log('search result', shows);
         this.searchedShows = shows;
+        this.searchedShows.forEach(show => { 
+          if(show.show.rating.average == null) {
+             show.show.rating.average = 0;
+            }});
+        console.log('search result', this.searchedShows);
        });
       });
     }

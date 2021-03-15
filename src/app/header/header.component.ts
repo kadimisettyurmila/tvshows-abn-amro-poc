@@ -15,6 +15,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.commonService.getShowsList().subscribe (shows => {
       this.allShows = shows;
+      console.log('all shows', this.allShows);
       this.genreList = this.commonService.getGenreList(this.allShows);
       console.log('genre list:',this.genreList);
     });

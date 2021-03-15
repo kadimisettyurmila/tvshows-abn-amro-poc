@@ -10,7 +10,7 @@ export class TvShow {
     premiered!: string;
     officialsite!: string;
     schedule!: {};
-    rating!: {};
+    rating!: {average : number};
     weight!: number;
     network!: {};
     webchannel!: null;

@@ -18,8 +18,8 @@ export class CommonService {
    @params searchShowName : show name to search
    @returns shows by search value
   */
-  getShowSearch(searchShowName: string):Observable<Array<TvShow>> {
-    return this.http.get<Array<TvShow>>(`${environment.searchShowsApi}`+'?q='+searchShowName);
+  getShowSearch(searchShowName: string):Observable<Array<{show:TvShow}>> {
+    return this.http.get<Array<{show: TvShow}>>(`${environment.searchShowsApi}`+'?q='+searchShowName);
   }
   /*
   Fetches movies by genre 

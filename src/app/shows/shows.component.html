@@ -1,5 +1,5 @@
 <div class="row tileclass">
-    <div class="col-sm-6 col-md-3" *ngFor="let show of searchedShows | orderBy: 'show.show?.rating?.average': true">
+    <div class="col-sm-6 col-md-3" *ngFor="let show of searchedShows | orderBy: 'show.rating.average': true">
          <div class="card" [routerLink]="['/showDetails', show?.show?.id]">
               <img [src]="show?.show?.image?.original" [alt]="show?.show?.id" class="genreimg">
               <div class="container">

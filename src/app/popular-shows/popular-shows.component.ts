@@ -13,7 +13,7 @@ ratingLimit = 9;
   constructor() { }
   
   ngOnInit(): void {
-    console.log('Total shows:', this.allShows);
+    console.log('Total shows in popular shows:', this.allShows);
     // filters all shows by rating threshold assumed (ratingLimit:9)
     this.popularShows = this.allShows.filter((show:any) => show.rating.average > this.ratingLimit);
     console.log('popular shows', this.popularShows);

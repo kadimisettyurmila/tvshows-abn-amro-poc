@@ -10,7 +10,6 @@ import { CommonService } from './../services/common.service';
 })
 export class DashboardComponent implements OnInit {
   allShows: Array<TvShow> = [];
-  genreList : Array<string> = [];
   constructor(private commonService: CommonService) { }
 
   ngOnInit(): void {
