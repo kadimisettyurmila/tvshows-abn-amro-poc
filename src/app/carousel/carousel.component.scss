@@ -28,6 +28,10 @@ ngb-carousel {
     .carousel-control-next, .carousel-indicators, .carousel-control-prev {
          z-index: 20;
     }
+    .carousel-caption {
+        bottom: -11px;
+        left: 80%;
+    }
     
 }
 

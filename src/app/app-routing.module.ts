@@ -8,7 +8,8 @@ import { ShowsComponent } from './shows/shows.component';
 const routes: Routes = [{ path: '', component: DashboardComponent },
 { path: 'genres/:genre', component: GenresComponent },
 { path: 'showDetails/:showId', component: ShowDetailsComponent },
-{ path: 'shows/:searchShow', component: ShowsComponent }
+{ path: 'shows/:searchShow', component: ShowsComponent },
+{path: '**', component: DashboardComponent }
 ];
 
 @NgModule({

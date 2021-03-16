@@ -1,10 +1,10 @@
 <h4 class="genre-header font-italic">{{selectedGenre}} Shows</h4>
 <div class="row tileclass">
-    <div class="col-sm-6 col-md-3" *ngFor="let show of showsByGenre | orderBy: 'rating.average': true">
+    <div class="col-sm-6 col-md-4" *ngFor="let show of showsByGenre | orderBy: 'rating.average': true">
          <div class="card" [routerLink]="['/showDetails', show.id]">
               <img [src]="show.image.original" [alt]="show.id" class="genreimg">
-              <div class="container">
-                <h4><b>{{show.name}}</b></h4> 
+              <div class="genreDetails">
+                <div><b>{{show.name}}</b></div> 
                 <p class="text-danger"><b>Rating: {{show.rating.average}}</b></p> 
               </div>
          </div>
