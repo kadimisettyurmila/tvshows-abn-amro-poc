@@ -10,14 +10,14 @@ import { TvShow } from '../models/shows';
 describe('GenresComponent', () => {
   let component: GenresComponent;
   let fixture: ComponentFixture<GenresComponent>;
+  let allShows = [{'id': 1, 'name': 'Firefly',genres:['adventure']}, {'id':2,'name':'Game of thrones', genres:['action','adventure']}];
   const mockActivatedRoute = { 
     params: of({ genre: 'adventure' }) 
   };
 
   beforeEach(() => {
     class commonServiceStub {
-      getShowsList() {
-        let allShows = [{'id': 1, 'name': 'Firefly',genres:['adventure']}, {'id':2,'name':'Game of thrones', genres:['action','adventure']}];
+      getShowsList() {        
          return of(allShows);
       }
     }
@@ -38,19 +38,13 @@ describe('GenresComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it(`showlist has default value`, () => {
-    expect(component.showlist).toEqual([]);
-  });
-
-  it(`allShows has default value`, () => {
+  it(`allShows available`, () => {
     expect(component.allShows).not.toEqual([]);
+    expect(component.allShows.length).toEqual(2);
   });
  
-  it(`selectedGenreShows has default value`, () => {
-    expect(component.selectedGenreShows).toEqual([]);
-  });
 
-  it(`showsByGenre has default value`, () => {
+  it(`fetch shows By Genre`, () => {
     expect(component.showsByGenre).not.toEqual([]);
   });
 });

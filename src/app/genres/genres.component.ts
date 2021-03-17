@@ -9,7 +9,6 @@ import { CommonService } from '../services/common.service';
   styleUrls: ['./genres.component.scss']
 })
 export class GenresComponent implements OnInit {
- showlist = [];
  allShows :Array<TvShow> = [];
  selectedGenre = "";
  selectedGenreShows:Array<TvShow> = [];

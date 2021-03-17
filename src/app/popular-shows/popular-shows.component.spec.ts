@@ -35,5 +35,6 @@ describe('PopularShowsComponent', () => {
     fixture.detectChanges();   
     component.ngOnInit();
     expect(component.popularShows).not.toEqual([]);
+    expect(component.popularShows.length).toEqual(2);
   });
 });

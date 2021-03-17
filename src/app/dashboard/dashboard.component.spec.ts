@@ -7,9 +7,10 @@ import { of } from 'rxjs';
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
   let fixture: ComponentFixture<DashboardComponent>;
+  let allShows = [{'id': 1, 'name': 'Firefly',genres:['adventure']}, {'id':2,'name':'Game of thrones', genres:['action','adventure']}];
   const commonServiceStub = () => ({     
     getShowsList() {
-      let allShows = [{'id': 1, 'name': 'Firefly',genres:['adventure']}, {'id':2,'name':'Game of thrones', genres:['action','adventure']}];
+      
        return of(allShows);
     }
   });
@@ -36,6 +37,7 @@ describe('DashboardComponent', () => {
     it('makes expected calls', () => {    
       component.ngOnInit();
       expect(component.allShows).not.toEqual([]);
+      expect(component.allShows.length).toEqual(2);
     });
   });
 });

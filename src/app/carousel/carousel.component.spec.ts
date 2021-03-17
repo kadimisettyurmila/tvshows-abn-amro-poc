@@ -19,8 +19,9 @@ describe('CarouselComponent', () => {
   it('can load instance', () => {
     expect(component).toBeTruthy();
   });
-   it('can load instance', () => {
+   it('set slides for carousel', () => {
     component.ngOnInit();
-    expect(component.showsToSlideFormatted).not.toEqual([]);
+    expect(component.showsToSlideFormatted).not.toEqual([]);    
+    expect(component.showsToSlideFormatted[0]).toEqual(shows);
   });
 });

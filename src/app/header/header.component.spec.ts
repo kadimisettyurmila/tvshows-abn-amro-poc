@@ -43,10 +43,7 @@ describe('HeaderComponent', () => {
   });
     it('makes expected calls', () => {
       component.ngOnInit();      
-    expect(component.allShows[0].id).toEqual(1);
-    expect(component.allShows[1].id).toEqual(2);
-    expect(component.allShows[0].name).toEqual('Firefly');
-    expect(component.allShows[1].name).toEqual('Game of thrones');
+    expect(component.allShows.length).toEqual(2);
     expect(component.genreList).toEqual(['action','adventure']);
     });
   

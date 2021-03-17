@@ -40,10 +40,4 @@ describe('ShowDetailsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  it('should get selected show details', () => {
-    expect(component.selectedShowDetails).toEqual(allShows);
-  });
-  it('selected show details should not be empty', () => {
-    expect(component.selectedShowDetails).not.toEqual({});
-  });
 });
