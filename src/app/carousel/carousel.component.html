@@ -1,12 +1,16 @@
 <div class="container-fluid">
-<ngb-carousel>
+ <ngb-carousel *ngIf="mobile">
     <ng-template ngbSlide *ngFor = "let show of showsToSlide" >        
       <div class="picsum-img-wrapper" [routerLink]="['/showDetails', show.id]">
         <img [src]="show.image.original" alt="Angular Carousel 1">
-      </div>
-      <div class="carousel-caption font-weight-bold font-italic">
-        <h4>Rating:{{show.rating.average}}</h4>
-      </div>      
+      </div>    
+    </ng-template>
+  </ngb-carousel> 
+  <ngb-carousel  *ngIf="!mobile">
+    <ng-template ngbSlide *ngFor = "let shows of showsToSlideFormatted" >        
+      <div class="picsum-img-wrapper col-sm-4 img-responsive" style="float:left" [routerLink]="['/showDetails', show.id]" *ngFor = "let show of shows">
+        <img [src]="show.image.original" alt="Angular Carousel 1">
+      </div>   
     </ng-template>
   </ngb-carousel>
 </div>

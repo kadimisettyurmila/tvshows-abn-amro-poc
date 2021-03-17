@@ -9,7 +9,7 @@ export class PopularShowsComponent implements OnInit {
  
 @Input() allShows: any;
 popularShows: any = [];
-ratingLimit = 9;
+ratingLimit = 8.5;
   constructor() { }
   
   ngOnInit(): void {

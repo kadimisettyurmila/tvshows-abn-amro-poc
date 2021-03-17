@@ -32,7 +32,7 @@ describe('CommonService', () => {
       allShows.push(show);
       show.id = 2;
       show.name = 'Game of thrones';
-      show.genres = ['adventure'];
+      show.genres = ['action','adventure'];
       allShows.push(show);
     it('makes expected calls', () => {
       spyOn(service, 'getShowsList').and.returnValue(of(allShows));
@@ -42,7 +42,7 @@ describe('CommonService', () => {
     });
     it('shows genre list', () => {
       let genres: Array<string> = service.getGenreList(allShows); 
-      expect(genres).not.toEqual([]);    
+      expect(genres).toEqual(['action', 'adventure']);    
     });
   });
 

@@ -9,24 +9,15 @@ import { of } from 'rxjs';
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
-
+  let allShows = [{'id': 1, 'name': 'Firefly',genres:['adventure']},
+   {'id':2,'name':'Game of thrones', genres:['action','adventure']}];
   beforeEach(() => {
       class commonServiceStub {     
-        getShowsList() {
-          let tvShow = new TvShow;
-          let allShows = [];
-          tvShow.id = 1;
-          tvShow.name = 'Firefly';
-          tvShow.genres = ['adventure'];
-          allShows.push(tvShow)
-          tvShow.id = 2;
-          tvShow.name = 'Game of thrones';
-          tvShow.genres = ['adventure'];
-          allShows.push(tvShow)
+        getShowsList() {          
            return of(allShows);
         }
       
-      getGenreList(allShows: any) { return ['adventure']}
+      getGenreList(allShows: any) { return ['action','adventure']}
     }
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
@@ -52,8 +43,11 @@ describe('HeaderComponent', () => {
   });
     it('makes expected calls', () => {
       component.ngOnInit();      
-    expect(component.allShows).not.toEqual([]);
-    expect(component.genreList).not.toEqual([]);
+    expect(component.allShows[0].id).toEqual(1);
+    expect(component.allShows[1].id).toEqual(2);
+    expect(component.allShows[0].name).toEqual('Firefly');
+    expect(component.allShows[1].name).toEqual('Game of thrones');
+    expect(component.genreList).toEqual(['action','adventure']);
     });
   
 });

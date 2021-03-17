@@ -6,18 +6,8 @@ import { TvShow } from '../models/shows';
 describe('PopularShowsComponent', () => {
   let component: PopularShowsComponent;
   let fixture: ComponentFixture<PopularShowsComponent>;
-  let tvShow = new TvShow;
-        let allShows: Array<TvShow> = [];
-        tvShow.id = 1;
-        tvShow.name = 'Firefly';
-        tvShow.genres = ['adventure'];
-        tvShow.rating = {'average' : 9.5}
-        allShows.push(tvShow)
-        tvShow.id = 2;
-        tvShow.name = 'Game of thrones';
-        tvShow.genres = ['adventure'];        
-        tvShow.rating = {'average' : 9.6}
-        allShows.push(tvShow)
+  let allShows = [{'id': 1, 'name': 'Firefly',genres:['adventure'], 'rating':{'average':9.5}}, 
+  {'id':2,'name':'Game of thrones', genres:['action','adventure'], 'rating':{'average':9.6}}];
         
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -38,7 +28,7 @@ describe('PopularShowsComponent', () => {
   });
 
   it(`ratingLimit has default value`, () => {
-    expect(component.ratingLimit).toEqual(9);
+    expect(component.ratingLimit).toEqual(8.5);
   });
 
   it('makes expected calls', () => { 

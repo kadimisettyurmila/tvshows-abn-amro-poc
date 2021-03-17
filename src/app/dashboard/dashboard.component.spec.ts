@@ -2,7 +2,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonService } from './../services/common.service';
 import { DashboardComponent } from './dashboard.component';
-import { TvShow } from '../models/shows';
 import { of } from 'rxjs';
 
 describe('DashboardComponent', () => {
@@ -10,16 +9,7 @@ describe('DashboardComponent', () => {
   let fixture: ComponentFixture<DashboardComponent>;
   const commonServiceStub = () => ({     
     getShowsList() {
-      let tvShow = new TvShow;
-      let allShows = [];
-      tvShow.id = 1;
-      tvShow.name = 'Firefly';
-      tvShow.genres = ['adventure'];
-      allShows.push(tvShow)
-      tvShow.id = 2;
-      tvShow.name = 'Game of thrones'
-      tvShow.genres = ['adventure'];
-      allShows.push(tvShow)
+      let allShows = [{'id': 1, 'name': 'Firefly',genres:['adventure']}, {'id':2,'name':'Game of thrones', genres:['action','adventure']}];
        return of(allShows);
     }
   });
