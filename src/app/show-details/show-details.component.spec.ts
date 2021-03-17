@@ -39,5 +39,6 @@ describe('ShowDetailsComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+    expect(component.selectedShowDetails).toEqual(allShows);
   });
 });

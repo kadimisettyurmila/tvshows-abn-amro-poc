@@ -46,5 +46,6 @@ describe('GenresComponent', () => {
 
   it(`fetch shows By Genre`, () => {
     expect(component.showsByGenre).not.toEqual([]);
+    expect(component.showsByGenre.length).toEqual(2);
   });
 });
