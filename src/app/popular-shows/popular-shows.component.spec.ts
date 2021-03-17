@@ -6,7 +6,7 @@ import { TvShow } from '../models/shows';
 describe('PopularShowsComponent', () => {
   let component: PopularShowsComponent;
   let fixture: ComponentFixture<PopularShowsComponent>;
-  let allShows = [{'id': 1, 'name': 'Firefly',genres:['adventure'], 'rating':{'average':9.5}}, 
+  let allShows = [{'id': 1, 'name': 'Firefly',genres:['adventure'], 'rating':{'average':8}}, 
   {'id':2,'name':'Game of thrones', genres:['action','adventure'], 'rating':{'average':9.6}}];
         
   beforeEach(() => {
@@ -34,7 +34,6 @@ describe('PopularShowsComponent', () => {
   it('makes expected calls', () => { 
     fixture.detectChanges();   
     component.ngOnInit();
-    expect(component.popularShows).not.toEqual([]);
-    expect(component.popularShows.length).toEqual(2);
+    expect(component.popularShows.length).toEqual(1);
   });
 });

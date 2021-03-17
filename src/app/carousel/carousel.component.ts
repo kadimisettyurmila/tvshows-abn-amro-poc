@@ -21,7 +21,6 @@ export class CarouselComponent implements OnInit {
   
 this.showsToSlideFormatted = [];
 this.showsToSlideFormatted = this.getShowsToSlide(this.showsToSlide);
-console.log('shows to slide',this.showsToSlideFormatted);
   }
 
   @HostListener('window:resize', ['$event'])

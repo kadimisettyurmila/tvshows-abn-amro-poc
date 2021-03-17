@@ -17,16 +17,13 @@ export class GenresComponent implements OnInit {
     this.activatedRoute.params.subscribe((param) => {
       let selectedGenre = '';
       if(param.genre) {
-        console.log('genre', param.genre);
         this.selectedGenre = selectedGenre = param.genre;
-
          this.commonService.getShowsList().subscribe((shows) => {
           console.log('all shows', shows);
           this.allShows = shows; 
           this.showsByGenre = this.getShowsByGenre(this.allShows, selectedGenre);
          } );
       }        
-      console.log('shows by genre', this.showsByGenre);
     });
   }
 
@@ -36,7 +33,6 @@ export class GenresComponent implements OnInit {
 
   getShowsByGenre(allShows: Array<TvShow>, selectedGenre: string): Array<TvShow> {
     let selectedGenreShows = this.allShows.filter((show) => show.genres.includes(selectedGenre));
-    console.log('selected genre shows', selectedGenreShows);
        return selectedGenreShows;   
      
   }

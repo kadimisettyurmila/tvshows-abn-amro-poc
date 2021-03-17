@@ -15,7 +15,6 @@ export class ShowsComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((param) => {
-      console.log('search show value', param.searchShow)
       this.commonService.getShowSearch(param.searchShow).subscribe (shows => { 
         this.searchedShows = [];
         this.searchedShows = shows;
@@ -23,7 +22,6 @@ export class ShowsComponent implements OnInit {
           if(show.show.rating.average == null) {
              show.show.rating.average = 0;
             }});
-        console.log('search result', this.searchedShows);
        });
       });
     }
