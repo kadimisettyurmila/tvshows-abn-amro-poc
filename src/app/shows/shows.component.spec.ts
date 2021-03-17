@@ -11,6 +11,7 @@ describe('ShowsComponent', () => {
   let component: ShowsComponent;
   let fixture: ComponentFixture<ShowsComponent>;
   let orderBy: OrderPipe;
+  let showDetails = {'id': 1, 'name': 'Firefly',genres:['adventure'], 'rating':{'average':9.5}};
   const mockActivatedRoute = { 
     params: of({ searchShow: 'Firefly' }) 
   };
@@ -18,12 +19,8 @@ describe('ShowsComponent', () => {
   beforeEach(async () => {
     orderBy = new OrderPipe;
     const commonServiceStub = () => ({     
-      getShowSearch(param:string) {
-        let tvShow = new TvShow;
-        tvShow.id = 1;
-        tvShow.name = 'Firefly'
-        tvShow.rating = {average: 9};
-         return of([{show:tvShow}]);
+      getShowSearch(param:string) {        
+         return of([{show:showDetails}]);
       }
     });
     await TestBed.configureTestingModule({

@@ -1,13 +1,21 @@
 <div class="show-details">
 <div class="row">
-<div class="col-sm-2">
-<img [src] = "selectedShowDetails?.image?.medium">
+<div class="col-sm-3">
+<img class="showImage" [src] = "selectedShowDetails?.image?.original" [alt]="selectedShowDetails?.id">
 </div>
-<div class="col-sm-10">
+<div class="col-sm-9">
     <h4>{{selectedShowDetails?.name}}</h4>    
 <p [innerHtml]="selectedShowDetails?.summary"></p>
-<p><b>Rating: {{selectedShowDetails?.rating?.average}}</b></p>
+<p>Rating: {{selectedShowDetails?.rating?.average}}</p>
 <p>Language: {{selectedShowDetails?.language}}</p>
+<p>Genre: <span>{{selectedShowDetails?.genres?.join(', ')}}</span></p>
+<p class="font-weight-bold">Seasons:</p>
+<div class="row">
+<div class="col-4 col-sm-3 col-md-2 " *ngFor="let season of selectedShowDetails?._embedded?.seasons" >
+    <div>Season:{{season?.number}}</div>
+    <img class="seasonImage" [src]="season?.image?.medium" onerror="this.src='assets/default.PNG';" [alt]="season?.id">
+</div>
+</div>
 </div>
 </div>
 </div>

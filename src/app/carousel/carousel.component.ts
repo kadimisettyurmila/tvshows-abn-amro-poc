@@ -9,6 +9,8 @@ export class CarouselComponent implements OnInit {
  @Input() showsToSlide: any;
  showsToSlideFormatted: any;
  mobile = false;
+ // number of shows per slide 
+ static noOfShowsPerSlide = 3;
   screenWidth: any;
   screenHeight: any;
   constructor() { }
@@ -16,20 +18,10 @@ export class CarouselComponent implements OnInit {
   ngOnInit(): void {
   this.checkResolution(window); 
 
-  // code to show 3 slides for non mobile resolutions
+  
 this.showsToSlideFormatted = [];
-var j = -1;
-
-for (var i = 0; i < this.showsToSlide.length; i++) {
-    if (i % 3 == 0) {
-        j++;
-        this.showsToSlideFormatted[j] = [];
-        this.showsToSlideFormatted[j].push(this.showsToSlide[i]);
-    }
-    else {
-        this.showsToSlideFormatted[j].push(this.showsToSlide[i]);
-    }
-}
+this.showsToSlideFormatted = this.getShowsToSlide(this.showsToSlide);
+console.log('shows to slide',this.showsToSlideFormatted);
   }
 
   @HostListener('window:resize', ['$event'])
@@ -46,5 +38,21 @@ for (var i = 0; i < this.showsToSlide.length; i++) {
     }
     else 
     this.mobile = false;
+  }
+
+  // code to show 3 slides in carousel for non mobile resolutions
+  getShowsToSlide(popularShows:any){
+    var j = -1;
+    for (var i = 0; i < this.showsToSlide.length; i++) {
+        if (i % CarouselComponent.noOfShowsPerSlide == 0) {
+            j++;
+            this.showsToSlideFormatted[j] = [];
+            this.showsToSlideFormatted[j].push(this.showsToSlide[i]);
+        }
+        else {
+            this.showsToSlideFormatted[j].push(this.showsToSlide[i]);
+        }
+    }
+    return this.showsToSlideFormatted;
   }
 }

@@ -14,6 +14,10 @@ export class CommonService {
   getShowsList():Observable<Array<TvShow>> {
    return this.http.get<Array<TvShow>>(`${environment.apiUrl}`);
   }
+  // Fetch select movie information along with seasons
+  getSelectedShowInfo(showID: number):Observable<TvShow> {
+    return this.http.get<TvShow>(`${environment.apiUrl}`+'/'+showID+'?embed[]=seasons');
+   }
   /* Fetch shows by search value
    @params searchShowName : show name to search
    @returns shows by search value

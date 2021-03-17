@@ -10,16 +10,12 @@ import { filter } from 'rxjs/operators';
 describe('ShowDetailsComponent', () => {
   let component: ShowDetailsComponent;
   let fixture: ComponentFixture<ShowDetailsComponent>;
+  let allShows = {
+    'id': 1, 'name': 'Firefly', genres: ['adventure'], 'rating': { 'average': 9.5 },
+    '_embedded': { 'seasons': [{ 'number': 1, image: { 'medium': '' } }, { 'number': 2, image: { 'medium': '' } }] }
+  };
   const commonServiceStub = () => ({     
-    getShowsList() {
-      let tvShow = new TvShow;
-      let allShows = [];
-      tvShow.id = 1;
-      tvShow.name = 'Firefly'
-      allShows.push({show :tvShow});
-      tvShow.id = 2;
-      tvShow.name = 'Game of thrones'
-      allShows.push({show:tvShow});
+    getSelectedShowInfo() {  
        return of(allShows);
     }
   });
@@ -43,5 +39,11 @@ describe('ShowDetailsComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+  it('should get selected show details', () => {
+    expect(component.selectedShowDetails).toEqual(allShows);
+  });
+  it('selected show details should not be empty', () => {
+    expect(component.selectedShowDetails).not.toEqual({});
   });
 });
