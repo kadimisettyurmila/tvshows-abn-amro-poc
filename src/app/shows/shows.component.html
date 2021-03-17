@@ -1,4 +1,7 @@
 <div class="row tileclass">
+     <div *ngIf="searchedShows.length == 0">
+        <p>No search results found</p>
+     </div>
     <div class="col-6 col-sm-6 col-md-4" *ngFor="let show of searchedShows | orderBy: 'show.rating.average': true">
          <div class="card" [routerLink]="['/showDetails', show?.show?.id]">          
                <img [src]="show?.show?.image?.original" onerror="this.src='assets/default.PNG';" [alt]="show?.show?.id" class="genreimg">
