@@ -11,7 +11,7 @@
 <p>Genre: <span>{{selectedShowDetails?.genres?.join(', ')}}</span></p>
 <p class="font-weight-bold">Seasons:</p>
 <div class="row">
-<div class="col-4 col-sm-3 col-md-2 " *ngFor="let season of selectedShowDetails?._embedded?.seasons" >
+<div class="col-4 col-sm-3 col-md-2 seasons" *ngFor="let season of selectedShowDetails?._embedded?.seasons" >
     <div>Season:{{season?.number}}</div>
     <img class="seasonImage" [src]="season?.image?.medium" onerror="this.src='assets/default.PNG';" [alt]="season?.id">
 </div>
