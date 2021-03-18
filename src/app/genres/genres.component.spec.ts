@@ -5,12 +5,12 @@ import { CommonService } from '../services/common.service';
 import { GenresComponent } from './genres.component';
 import { OrderPipe } from "ngx-order-pipe";
 import { of } from 'rxjs';
-import { TvShow } from '../models/shows';
 
 describe('GenresComponent', () => {
   let component: GenresComponent;
   let fixture: ComponentFixture<GenresComponent>;
-  let allShows = [{'id': 1, 'name': 'Firefly',genres:['adventure']}, {'id':2,'name':'Game of thrones', genres:['action','adventure']}];
+  const allShows = [{'id': 1, 'name': 'Firefly',genres:['adventure']},
+   {'id':2,'name':'Game of thrones', genres:['action','adventure']}];
   const mockActivatedRoute = { 
     params: of({ genre: 'adventure' }) 
   };

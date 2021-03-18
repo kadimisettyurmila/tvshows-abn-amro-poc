@@ -24,8 +24,8 @@ describe('CommonService', () => {
   });
 
   describe('getShowsList', () => {
-    let show = new TvShow;
-      let allShows: Array<TvShow> = [];
+    const show = new TvShow;
+      const allShows: Array<TvShow> = [];
       show.id = 1;
       show.name = 'Firefly';
       show.genres = ['adventure'];
@@ -41,7 +41,7 @@ describe('CommonService', () => {
       });      
     });
     it('shows genre list', () => {
-      let genres: Array<string> = service.getGenreList(allShows); 
+      const genres: Array<string> = service.getGenreList(allShows); 
       expect(genres).toEqual(['action', 'adventure']);    
     });
   });

@@ -10,7 +10,7 @@ import { filter } from 'rxjs/operators';
 describe('ShowDetailsComponent', () => {
   let component: ShowDetailsComponent;
   let fixture: ComponentFixture<ShowDetailsComponent>;
-  let allShows = {
+  const allShows = {
     'id': 1, 'name': 'Firefly', genres: ['adventure'], 'rating': { 'average': 9.5 },
     '_embedded': { 'seasons': [{ 'number': 1, image: { 'medium': '' } }, { 'number': 2, image: { 'medium': '' } }] }
   };

@@ -5,7 +5,7 @@ import { CarouselComponent } from './carousel.component';
 describe('CarouselComponent', () => {
   let component: CarouselComponent;
   let fixture: ComponentFixture<CarouselComponent>;
-  let shows = [{'id': 1, 'name': 'Game of thrones'}, {'id': 2, 'name': 'Firefly'}]
+  const shows = [{'id': 1, 'name': 'Game of thrones'}, {'id': 2, 'name': 'Firefly'}]
   beforeEach(() => {
     TestBed.configureTestingModule({
       schemas: [NO_ERRORS_SCHEMA],

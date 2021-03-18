@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { TvShow } from '../models/shows';
 import { CommonService } from '../services/common.service';
 
 @Component({
@@ -8,17 +7,13 @@ import { CommonService } from '../services/common.service';
   templateUrl: './show-details.component.html',
   styleUrls: ['./show-details.component.scss']
 })
-export class ShowDetailsComponent implements OnInit {
+export class ShowDetailsComponent {
   selectedShowId = 0;
   selectedShowDetails: any;
-  constructor(private activatedRoute: ActivatedRoute, private commonService: CommonService) { 
-    this.selectedShowId = parseInt(this.activatedRoute.snapshot.params.showId, 10); 
-  this.commonService.getSelectedShowInfo(this.selectedShowId).subscribe (show => {
-    this.selectedShowDetails = show;
-  });
-   }
-
-  ngOnInit(): void {
+  constructor(private activatedRoute: ActivatedRoute, private commonService: CommonService) {
+    this.selectedShowId = parseInt(this.activatedRoute.snapshot.params.showId, 10);
+    this.commonService.getSelectedShowInfo(this.selectedShowId).subscribe(show => {
+      this.selectedShowDetails = show;
+    });
   }
-
 }

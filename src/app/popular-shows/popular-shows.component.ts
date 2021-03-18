@@ -6,14 +6,15 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./popular-shows.component.scss']
 })
 export class PopularShowsComponent implements OnInit {
- 
-@Input() allShows: any;
-popularShows: any = [];
-ratingLimit = 8.5;
+
+  @Input() allShows: any;
+  popularShows: any = [];
+  ratingLimit = 8.5;
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   constructor() { }
-  
+
   ngOnInit(): void {
     // filters all shows by rating threshold assumed (ratingLimit:8.5)
-    this.popularShows = this.allShows.filter((show:any) => show.rating.average > this.ratingLimit);
+    this.popularShows = this.allShows.filter((show: any) => show.rating.average > this.ratingLimit);
   }
 }
